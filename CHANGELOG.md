@@ -1,3 +1,16 @@
+# v0.0.3 (Fri Jun 07 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Delete src/web/templates/index.html ([@hujingwen1025](https://github.com/hujingwen1025))
+- Delete src/web/templates/base.html ([@hujingwen1025](https://github.com/hujingwen1025))
+
+#### Authors: 1
+
+- Jingwen ([@hujingwen1025](https://github.com/hujingwen1025))
+
+---
+
 # v0.0.2 (Fri Jun 07 2024)
 
 #### ⚠️ Pushed to `main`
