@@ -1,3 +1,15 @@
+# v0.0.2 (Fri Jun 07 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Update app.py ([@hujingwen1025](https://github.com/hujingwen1025))
+
+#### Authors: 1
+
+- Jingwen ([@hujingwen1025](https://github.com/hujingwen1025))
+
+---
+
 # v0.0.1 (Fri Jun 07 2024)
 
 :tada: This release contains work from a new contributor! :tada:
