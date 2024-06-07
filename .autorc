@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "git-tag",
+    "all-contributors",
+    "first-time-contributor",
+    "released"
+  ],
+  "owner": "hujingwen1025",
+  "repo": "container-qfnlag",
+  "name": "hujingwen1025",
+  "email": "hujingwen1025@gmail.com",
+}
