@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signed Out</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #ff0000;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            localStorage.removeItem("sessionId");
+            window.location.href = "/";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Signed Out</h1>
+        <p><strong>You have been signed out of your account.</strong></p>
+        <p>We will be removing your sign in infomation for security.</p>
+        <p>This may be an error or a security fallback. Please reach out if you still have concerns!</p>
+        <p><strong>Your login might has expired to cause this action.</strong></p>
+        <p><strong>You will be <a href="/">redirected</a> back to the home page after 5 seconds</strong></p>
+    </div>
+</body>
+    <script>
+        console.log("Clearing caching sessionId");
+localStorage.removeItem("sessionId");
+    </script>
+</html>

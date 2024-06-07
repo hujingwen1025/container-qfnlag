@@ -1,0 +1,52 @@
+<div id="mainhtml"></div>
+<div id="sigininhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signing You In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2em;
+      font-style: italic;
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      from { font-size: 2em; }
+      to { font-size: 2.5em; }
+    }
+    @keyframes ellipsis {
+      0% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
+  </style>
+  <script>
+  var timeleft = 10;
+  var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      window.location.replace("noresponse");
+    } else {
+      document.getElementById("countdown").innerHTML = timeleft;
+    }
+    timeleft -= 1;
+  }, 1000);
+</script>
+</head>
+<body>
+  <h1>Signing You In</h1>
+  <p>(Please do not refresh this page!)</p>
+  <h2>Allow up to <strong><span id = 'countdown'>(null)</span></strong> seconds</h2>
+</body>
+</div>

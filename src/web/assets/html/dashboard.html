@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .widget {
+      flex-basis: calc(33.33% - 20px);
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .widget h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333333;
+    }
+    
+    .widget p {
+      margin-bottom: 0;
+      color: #666666;
+    }
+    
+    .widget .icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #666666;
+    }
+  </style>
+</head>
+    <script>
+        function signout() {
+            console.log("Clearing caching sessionId");
+localStorage['sessionId'] = null;
+            console.log("Cleared sessionId");
+            console.log("Signed out")
+            window.location.replace("/");
+            return 0;
+        }
+    </script>
+<body>
+  <div class="dashboard">
+    <div class="widget">
+      <h2>Users</h2>
+      <p>Total: 500</p>
+      <i class="icon">👥</i>
+    </div>
+    <div class="widget">
+      <h2>Revenue</h2>
+      <p>Total: $10,000</p>
+      <i class="icon">💰</i>
+    </div>
+    <div class="widget">
+      <h2>Orders</h2>
+      <p>Total: 100</p>
+      <i class="icon">🛒</i>
+    </div>
+  </div>
+    <button onclick="signout();">Sign Out</button>
+</body>
+</html>
