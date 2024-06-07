@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Server Error</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .redirect-message {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    setTimeout(function() {
+        localStorage.removeItem("sessionId");
+      window.location.href = "/";
+    }, 5000);
+  </script>
+</head>
+<body>
+  <h1>Oops! Something went wrong.</h1>
+  <p>The error was on our side. We apologize for the inconvenience.</p>
+  <div class="redirect-message">You will be redirected back to the homepage in 5 seconds...</div>
+</body>
+</html>

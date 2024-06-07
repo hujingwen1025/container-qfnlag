@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 100px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <div class="error-message">Invalid username or password. Please try again.</div>
+    <form action="/login" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required="">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required="">
+        <input type="submit" value="Login" class="btn">
+    </form>
+    <br>
+    <form action="/register">
+        <input type="submit" value="Register" class="btn">
+    </form>
+    <br>
+    <br>
+    <button type="submit" id="sessionlogin" class="btn" onclick="sidl();">Login With Session Id</button>
+</div>
+    <p>Sign into demo account by using session id: demo</p>
+</body>
+<script>
+    function sidl() {
+  var sessionidin = prompt("Enter your Session Id:");
+  console.log("Caching sessionId");
+localStorage['sessionId'] = sessionidin;
+            window.location.replace("/");
+        } 
+console.log("Reaching cached session id");
+var sesid = localStorage.getItem('sessionId');
+if (sesid !== null) {
+  console.log("Generating package for request /home page");
+  function getPage(page) {
+    console.log("Requesting provided page POST: " + page);
+    console.log("-Generating request");
+    return fetch(page, {
+      method: 'POST',
+      body: JSON.stringify({
+        sessionid: sesid,
+      }),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .catch(error => {
+        console.log('error: ', error);
+        alert("Error occurred while requesting page! Problem is caused by the server.");
+        window.location.replace("/");
+      });
+  }
+
+  getPage("/home").then(data => {
+    console.log("Server responded to request");
+    console.log("Loading raw HTML");
+    var showhtml = data.html;
+    console.log("Opening page source file");
+    document.open();
+    console.log("Writing raw HTML");
+    document.write(showhtml);
+    console.log("Packing raw HTML and preparing for display");
+    document.close();
+    console.log("Displaying HTML");
+  });
+} else {
+  console.log('No session id found');
+}
+</script>
+</html>
