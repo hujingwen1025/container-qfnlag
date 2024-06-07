@@ -1,3 +1,15 @@
+# v0.0.4 (Fri Jun 07 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Add files via upload ([@hujingwen1025](https://github.com/hujingwen1025))
+
+#### Authors: 1
+
+- Jingwen ([@hujingwen1025](https://github.com/hujingwen1025))
+
+---
+
 # v0.0.3 (Fri Jun 07 2024)
 
 #### ⚠️ Pushed to `main`
